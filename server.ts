@@ -101,6 +101,9 @@ const PORT = resolvePort();
 
 app.use(express.json());
 
+// Favicon handler
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 // Helper to decode Firebase JWT payload
 function decodeJwtPayload(token: string): { email?: string; user_id?: string; sub?: string; admin?: boolean } | null {
   try {
